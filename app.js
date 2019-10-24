@@ -10,22 +10,9 @@ $(document).ready(function(){
     })
 
     // Click to reveal the hidden secret
-    // $(window).click(function(){
-    //     $('#hidden').toggle(2000, 'swing');
-    // })
-
-    // Creating the table
-    // function starRating(){
-    //     var starHTML = "";
-    //     var starIndex = Number($('option:selected').val());
-    //     for (let i=0; i<starIndex; i++){
-    //         starHTML += 
-    //         `
-    //             <img src="icon/star.svg" width="5px" height="5px" /> 
-    //         `
-    //     }
-    //     $("#starTest").text(starHTML);
-    // }
+    $(window).click(function(){
+        $('#hidden').toggle(2000, 'swing');
+    })
 
     // This section is ust to input the star into the sample movies on the list
     var starRate = `<img src="icon/star.svg" width="15px" height="15px" />`;
@@ -59,10 +46,12 @@ $(document).ready(function(){
             $(".reviewTable tbody").append(newRow);
 
             $("#movieName").val("");
+
+            $(".deleteRow").click(function(){
+                $(this).parents("tr").remove();
+            });
         },
     );
-    $(".deleteRow").click(function(){
-        $(this).parents("tr").remove();
-    });
+   
     
 })
